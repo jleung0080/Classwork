@@ -5,9 +5,9 @@ public class RandomDiceRoll {
 	public static void main(String[] args) {
 		
 		int[] results = new int[6];
+		int totalRolls = 10000;
 		
-		
-		for(int index = 0; index < 1000; index++){
+		for(int index = 0; index < totalRolls; index++){
 			int result = rollUnfairDie();
 			System.out.println("Roll #"+ (index+1)+ ": " +result);
 			results[result-1]++;
@@ -15,7 +15,7 @@ public class RandomDiceRoll {
 			}
 		
 		for(int i = 0; i<6; i++){
-			System.out.println((i+1)+" appeared " + results[i] + " times.");
+			System.out.println((i+1)+" appeared " + (double)((int)((double)1000*results[i]/totalRolls)/10.0) + " % of the time.");
 		}
 		
 	}
