@@ -15,11 +15,6 @@ public class JoeyMain{
 
 	public static void main(String[] args) {
 		createField();
-		String s1 = " ";
-		String s2 = "a";
-		System.out.println(s1.compareTo(s2));
-		
-		
 		promptName();
 		//promptInput();
 		promptForever();
@@ -63,7 +58,7 @@ public class JoeyMain{
 		print("Glad to meet you, "+user+". For the rest of the time, "
 				+"I will call you "+user+". "
 				+"You may call me Computer."
-				+"We should become friends.");
+				+" We should become friends.");
 	}
 
 	public static void promptForever() {
@@ -95,8 +90,12 @@ public class JoeyMain{
 		searchString = searchString.trim();
 		searchString = searchString.toLowerCase();
 		keyword = keyword.toLowerCase();
+		System.out.println("The phrase is "+searchString);
+		System.out.println("The keyword is "+keyword);
 		//find first position of key word
-		int psn = searchString.indexOf(0);
+		int psn = searchString.indexOf(keyword);
+		System.out.println("The keyword was found at "+psn);
+		
 		//keep searching until context keyword found
 		while(psn>=0){
 			//assume preceded and followed by space
@@ -105,17 +104,21 @@ public class JoeyMain{
 			//check character in front if it exists
 			if(psn>0){
 				before = searchString.substring(psn-1, psn);
+				System.out.println("The character before is "+before);
 			}
 			//check if there is a character after the keyword
-			if(psn+keyword.length() < searchString.length){
+			if(psn+keyword.length() < searchString.length()){
 				//psn+1 is finding one space after our current psn, so this finds the next word
-				after = searchString.substring((psn + keyword.length(), 
+				after = searchString.substring((psn + keyword.length()), 
 						psn + keyword.length()+1);
+				System.out.println("The character after is "+after);
 			}
-			if(before.compareTo("a") < 0 && after.compareTo("a") < 0){
+			if(before.compareTo("a") < 0 && after.compareTo("a") < 0 && noNegations(searchString, psn)){
+				System.out.println("Found "+keyword+" at "+psn);
 				return psn;
 			}else{
 				psn = searchString.indexOf(keyword,psn+1);
+				System.out.println("Did not find " + keyword + ", checking position "+psn);
 			}
 			
 			
@@ -125,6 +128,26 @@ public class JoeyMain{
 		
 		
 		return -1;
+	}
+
+	//notes
+	//this is a helper method a helper method is a method designed for helping a larger method 
+	//because of this helper methods are private bs they only help what they assigned to
+	private static boolean noNegations(String searchString, int psn) {
+		//check to see if word "no" is in front of psn
+		if(psn - 3 >= 0 && searchString.substring(psn-3, psn).equals("no ")){
+			return false;
+		}
+		if(psn - 4 >= 0 && searchString.substring(psn-4, psn).equals("not ")){
+			return false;
+		}
+		if(psn - 6 >= 0 && searchString.substring(psn-6, psn).equals("never ")){
+			return false;
+		}
+		if(psn - 4 >= 0 && searchString.substring(psn-4, psn).equals("n't ")){
+			return false;
+		}
+		return true;
 	}
 
 	public static String promptInput() {
@@ -141,32 +164,6 @@ public class JoeyMain{
 
 	public static void print(String s){
 		String printString = s;
-		int cutoff = 35;
-		//check for words to add
-		//IOW s has a length > 0
-		while(s.length()>0){
-			String cut = "";
-			String nextWord = "";
-			//check to see if the next word will fit on the line
-			//there must still be words to add
-			while(cut.length() + nextWord.length() < cutoff && s.length()>0){
-				//add the next word to the line
-				cut += nextWord;
-				
-				s = s.substring(nextWord.length());
-				//identify the next word without the space
-				int endOfWord = s.indexOf(" ");
-				//if there are no more spaces this is the last word so add the whole thing
-				if(endOfWord == -1){
-					endOfWord = s.length()-1; //-1 for index
-				}
-				
-				nextWord = s.substring(0,endOfWord);
-				
-			}
-			printString += cut+"\n";
-		}
-		
 		System.out.println(printString);
 	}
 }
