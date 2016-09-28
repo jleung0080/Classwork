@@ -21,5 +21,15 @@ public class JoeySchool extends Object implements Chatbot {
 		}
 
 	}
+		
+	public boolean isTriggered(String userInput){
+		String[] triggers = {"school","class","teacher"};
+		//idea: create a for loop to iterate through array of triggers
+		
+		if(JoeyMain.findKeyword(userInput, "school", 0)>=0){
+			return true;
+		}
+		return false;
+	}
 
 }
