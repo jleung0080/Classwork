@@ -2,32 +2,40 @@ package test;
 
 public class blackJackPlayer {
         private String name;
-        private int handValue;
+        public int handValue;
         private int aceCounter;
-
+        public int wealth;
+        public boolean stand = false;
         private String[] card = {"Ace", "Two", "Three", "Four","Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
         private int[] values = {11,2,3,4,5,6,7,8,9,10,10,10,10};
 
-        public blackJackPlayer(String nameInput){
+        //constructor
+        public blackJackPlayer(String nameInput, int wealthInput){
             name = nameInput;
             handValue = 0;
             aceCounter = 0;
+            wealth = wealthInput;
+            
         }
 
+        public String getName(){
+            return name;
+        }
+        
         public int getHandValue(){
                 return handValue;
         }
 
 
-        private void hit(){
+        public String hit(){
             int pick = (int)(Math.random()*card.length);
             
             if(pick == 0){
-                JoeyClass.print(name + " was dealt an "+card[pick]);
+                //JoeyClass.print(name + " was dealt an "+card[pick]);
                 handValue += values[pick];
                 aceCounter++;
             } else{
-                JoeyClass.print("was dealt a"+card[pick]);
+                //JoeyClass.print("was dealt a"+card[pick]);
                 handValue += values[pick];
             }
             
@@ -36,9 +44,11 @@ public class blackJackPlayer {
                 handValue-=10;
             }
             
+            return card[pick];
+            
         }
         
-        private boolean isBust(){
+        public boolean isBust(){
         return handValue > 21;
     
     }

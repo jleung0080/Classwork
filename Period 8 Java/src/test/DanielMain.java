@@ -15,7 +15,7 @@ public class DanielMain {
 		createFields();
 		promptName();
 		//promptInput();
-		promptForever();
+		promptGame();
 	}
 	
 	public static void promptName() {
@@ -23,14 +23,15 @@ public class DanielMain {
 		user = input.nextLine();
 	}
 
-	public static void promptForever() {
+	public static void promptGame() {
 		inMainLoop = true;
 		while(inMainLoop){
-			print("Hi, "+user+".We are going to play blackjack");
+			print("Hi, "+user+". Would you like to play blackjack, tic tac toe, or 20 questions?");
 			response = promptInput();
 //			daniel.talk();
-			if(findKeyword(response, "good", 0) >= 0){
-				print("That's wonderful. "+"So glad to feel good");
+			if(findKeyword(response, "blackjack", 0) >= 0){
+				inMainLoop = false;
+				print("Okay, let's begin our game of BlackJack.");
 			}
 			else {
 				print("I don't understand");
