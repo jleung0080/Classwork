@@ -8,11 +8,12 @@ public class JoeyClass implements Chatbot{
 	private int annoyedCounter = 0;
 
 
-	private String[] annoyed = {"Can you please do an action that actually exists?", "How many times do I have to tell you to"
-			+ " do an action that actually exists?", "You aren't very good at following instructions.", "What kind of idiot can't follow instructions?", "Please listen to my instructions dumbo."};
-	private String[] praiseBet = {"That's a big bet.", "How much money do you have?", "*Whistles* Ey boss."};
-	private String[] praiseMove = {"Wow that's a brave move.", "Big baller shot caller huh?", "Feeling lucky today?"};
-	private String[] bust = {"Feelsbadsmans", "That's a bust", "Bad move"};
+	private String[] annoyed = {"Can you please do an action that actually exists?", "Stop messing up before I sen"
+			+ "d you to the Shadow Realm", "You aren't very good at following instructions.", "What kind of"
+					+ " idiot can't follow instructions?", "Are you even listening to me?", "Why am I even here with you right now ._."};
+	private String[] praiseBet = {"That's a big bet.", "I wish I was as rich as you xd", "*Whistles* Ey boss.", "Big baller shot caller huh?"};
+	private String[] praiseMove = {"Wow that's a brave move.", "Big balls for big people", "Feeling lucky today?", "Yolo420 amiright", "I admire your bravery."};
+	private String[] bust = {"Feels bad to be bad, you busted!", "That's a bust", "That's the neverlucky bust!"};
 
 	static Scanner input = new Scanner(System.in);
 	private int playerBet;
@@ -27,25 +28,57 @@ public class JoeyClass implements Chatbot{
 	public void talk() {
 		player.changeName(DanielMain.user);
 		while (player.wealth > 0){
-			
+
 			buyIn();
 			dealer.hit();
 			dealer.hit();
 			player.hit();
 			player.hit();
-			player.blackjackTest();
-			while (!player.isBust() || !player.stand){
+			while (!player.isBust() && !player.stand && !player.blackjackTest()){
+
 				promptAction();
 				// ask them what they wanna do next : hit, stand
 				//if hit -> player.hit()
 				//if player.isBust()  -> results()
 			}
-			player.stand = false;
-			while (dealer.handValue<17){
-				dealer.hit();
+			bustResponse();
+			if (!player.isBust()){
+				while (dealer.handValue<17){
+					dealer.hit();
+				}
 			}
-
+			results();
+			print("Your new balance is "+player.wealth);
+			resetGameVariables();
+			if(!playAgain()){
+				print("Thanks for playing with me, "+DanielMain.user);
+				break;
+			}
 		}
+	}
+
+	private boolean playAgain() {
+		if (player.wealth>0){
+			print("Would you like to play again? If you don't say no, I'll take that as a yes.");
+			String response = input.nextLine();
+			if(DanielMain.findKeyword(response, "no", 0) >= 0){
+				return false;
+			}else{
+				return true;
+			}
+		}else{
+			print("Sorry you're out of money!");
+			return false;
+		}
+	}
+
+	private void resetGameVariables() {
+		player.handValue = 0;
+		dealer.handValue = 0;
+		player.aceCounter = 0;
+		dealer.aceCounter = 0;
+		player.stand = false;
+
 	}
 
 	private void promptAction(){
@@ -57,10 +90,12 @@ public class JoeyClass implements Chatbot{
 		if (isHit(action) && !isStand(action)){
 			hitResponse();
 			player.hit();
+			annoyedCounter = 0;
 		}
 		if (!isHit(action) && isStand(action)){
 			standResponse();
 			player.stand = true;
+			annoyedCounter = 0;
 		}
 		if (isHit(action) && isStand(action)){
 			dumbResponse();
@@ -88,7 +123,7 @@ public class JoeyClass implements Chatbot{
 
 	private void dumbResponse() {
 		//replies annoyingly if 4+ mistakes were made
-		if(annoyedCounter>4){
+		if(annoyedCounter>2){
 			int responseSelection = (int)(Math.random()*annoyed.length);
 			print(annoyed[responseSelection]);
 		}else {
@@ -110,8 +145,8 @@ public class JoeyClass implements Chatbot{
 
 
 
-	private static int getBet() {
-		print("Please place your bet. (Must be minimum of 25 and maximum of 500)");
+	private int getBet() {
+		print("Please place your bet. (You may only enter an integer between 25 and 500)");
 		String integerString = DanielMain.promptInput();
 		boolean isInteger = false;
 		int value = 0;
@@ -123,6 +158,7 @@ public class JoeyClass implements Chatbot{
 			}catch(NumberFormatException e){
 				print("You must enter an number between 25 and 500. You better try again.");
 				integerString = DanielMain.promptInput();
+				print(annoyed[(int)(Math.random()*praiseBet.length)]);
 			}
 		}
 		return value;
@@ -130,6 +166,7 @@ public class JoeyClass implements Chatbot{
 
 	private void buyIn(){
 		boolean loop = true;
+		print("Your current balance is "+player.wealth);
 		while(loop){
 			playerBet = getBet();
 			if(playerBet<25){
@@ -170,38 +207,18 @@ public class JoeyClass implements Chatbot{
 				player.wealth += playerBet;
 			}else{
 				if(player.handValue < dealer.handValue){
-					print("You lose.");
+					print("The dealer's hand is "+dealer.handValue+", and your hand is "+player.handValue+". You lose.");
 					player.wealth -= playerBet;
 				}
 				if(player.handValue == dealer.handValue){
 					print("This round is a draw.");
 				}
 				if(player.handValue > dealer.handValue){
-					print("You win!");
+					print("The dealer's hand is "+dealer.handValue+", and your hand is "+player.handValue+". You win.");
 					player.wealth += playerBet;
 				}
 			}
 		}
-	}
-
-	public void run(){
-		while (player.wealth > 0){
-			buyIn();
-			dealer.hit();
-			dealer.hit();
-			player.hit();
-			player.hit();
-			while (!player.isBust() || !player.stand){
-				// ask them what they wanna do next : hit, stand
-				//if hit -> player.hit()
-				//if player.isBust()  -> results()
-			}
-			while (dealer.handValue<17){
-				dealer.hit();
-			}
-		}
-
-		//you have run out of money
 	}
 
 
