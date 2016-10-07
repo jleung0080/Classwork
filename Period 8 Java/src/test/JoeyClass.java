@@ -51,8 +51,9 @@ public class JoeyClass implements Chatbot{
 			print("Your new balance is "+player.wealth);
 			resetGameVariables();
 			if(!playAgain()){
-				print("Thanks for playing with me, "+DanielMain.user);
-				break;
+				print("Thanks for playing Blackjack with me, "+DanielMain.user+".");
+				DanielMain.promptGame();
+				
 			}
 		}
 	}

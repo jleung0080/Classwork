@@ -23,22 +23,32 @@ public class DanielMain {
 	}
 
 	public static void promptGame() {
-		inMainLoop = true;
-		while(inMainLoop){
-			print("Hi, "+user+". Would you like to play blackjack, mafia, or 20 questions?");
-			response = promptInput();
-//			daniel.talk();
-			if(findKeyword(response, "blackjack", 0) >= 0){
-				inMainLoop = false;
-				print("Okay, let's begin our game of BlackJack.");
-				blackJack.talk();
-			}
-			else {
-				print("Please pick a game");
-				
-			}
-		}
-	}
+        inMainLoop = true;
+        while(inMainLoop){
+            print("Hi, "+user+". Would you like to play BlackJack, Mafia, or Questions?");
+            response = promptInput();
+//          daniel.talk();
+            if(findKeyword(response, "blackjack", 0) >= 0){
+            //JOEY TRIGGER WORD
+                inMainLoop = false;
+                print("Okay, let's begin our game of BlackJack.");
+                blackJack.talk();
+            }
+            if(findKeyword(response, "question game", 0) >= 0){
+            //DANIEL TRIGGER WORD
+                inMainLoop = false;
+                
+            }
+            if(findKeyword(response, "mafia", 0) >= 0){
+            //RICHARD TRIGGER WORD
+                inMainLoop = false;
+            }
+            else {
+                print("Please pick a game");
+                
+            }
+        }
+    }
 
 	public static int findKeyword(String searchString, String keyword, int startPsn) {
 		//deletes white space
