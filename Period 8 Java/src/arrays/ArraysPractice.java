@@ -14,7 +14,7 @@ public class ArraysPractice {
 		boos3 = new boolean[3];
 		
 		
-		//2 ways of iterating through ann array
+		//2 ways of iterating through an array
 		/**standard for loop
 			- the index is important to keep track of 
 			- you need to customize the order
@@ -25,7 +25,7 @@ public class ArraysPractice {
 		}
 		
 		/** for each loop
-		 * 		-the index isnt imoprtant
+		 * 		-the index isn't important
 		 * 		-don't need to customize
 		 * 		- auto assigns a "handle"
 		 * 
