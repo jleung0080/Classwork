@@ -3,7 +3,7 @@ package test;
 public class blackJackPlayer {
 	public String name;
 	public int handValue;
-	private int aceCounter;
+	public int aceCounter;
 	public int wealth;
 	public boolean stand = false;
 	private String[] card = {"Ace", "Two", "Three", "Four","Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
@@ -25,16 +25,15 @@ public class blackJackPlayer {
 
 	public String hit(){
 		int pick = (int)(Math.random()*card.length);
-
 		if(pick == 0){
 			JoeyClass.print(name + " was dealt an "+card[pick]);
+			aceCounter++;
 			handValue += values[pick];
 			if(isBust() && aceCounter>0){
 				aceCounter--;
 				handValue-=10;
 			}
 			JoeyClass.print(name + "'s hand value is now "+ handValue);
-			aceCounter++;
 		} else{
 			JoeyClass.print(name +" was dealt a "+card[pick]);
 			handValue += values[pick];
