@@ -14,10 +14,10 @@ public class ArraysPractice {
 		print(fiftyNumbers);
 		randomize(fiftyNumbers, 1000);
 		print(fiftyNumbers);
-		rollDice(fiftyNumbers, 2);
+		rollDice(fiftyNumbers, 3);
 		//count each die roll and provide a percentage
 		print(fiftyNumbers);
-		countResult(fiftyNumbers);
+		countResult(fiftyNumbers, 3);
 
 
 		//long endTime = System.currentTimeMillis();
@@ -25,24 +25,28 @@ public class ArraysPractice {
 	}
 
 
-	private static void countResult(int[] z) {
-		int[] results = new int[11];
+	private static void countResult(int[] z, int numberOfDice) {
+		int[] results = new int[numberOfDice*6-1];
 		for(int i=0; i<z.length; i++){
-			for(int a=2;a<13;a++){
+			for(int a=numberOfDice;a< numberOfDice*6+1;a++){
 				if(z[i] == a){
-					results[a-2]++;
+					results[a-numberOfDice]++;
 				}
 			}
 		}
 		for(int i=0; i<results.length; i++){
-			System.out.println((i+2)+" was rolled "+(int)(100*(double)results[i]/z.length)+ "% of the time");
+			System.out.println((i+numberOfDice)+" was rolled "+(int)(100*(double)results[i]/z.length)+ "% of the time");
 		}
 	}
 
 	private static void rollDice(int[] z, int numberOfDice) {
 		// TODO Auto-generated method stub
 		for(int i=0; i<z.length; i++){
-			z[i] = ((int)(Math.random()*6+1))+((int)(Math.random()*6+1));
+			int roll = 0;
+			for(int j=0;j<numberOfDice;j++){
+				roll = roll + (int)(Math.random()*6+1);
+			}
+			z[i] = roll;
 		}
 	}
 
