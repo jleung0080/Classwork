@@ -5,7 +5,7 @@ public class ArrayMethods {
 
     public static void main(String[] args) {
         int[] nums = {1, 34, 21, 34, 33};
-        int[] sorted = {5,4,3,2,1};
+        int[] sorted = {9,6,3};
         System.out.println(isSorted(sorted));
         
     }
