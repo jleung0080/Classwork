@@ -1,6 +1,7 @@
 package homework;
 
 
+
 public class ArrayMethods {
 
     public static void main(String[] args) {
@@ -20,6 +21,11 @@ public class ArrayMethods {
     }
     
     public static int searchSorted(int[] sortedArrayToSearch, int key){
+    	for(int i = 0; i<sortedArrayToSearch.length; i++){
+    		if (sortedArrayToSearch[i] == key){
+    			return i;
+    		}
+    	}
     /**
      * this method is exactly like the one above, except the parameter sortedArrayToSearch will
      * always be sorted in DESCENDING order. Again return the index of the key or return -1
@@ -61,6 +67,12 @@ public class ArrayMethods {
     }
     
     public static void reverseOrder(int[] array){
+    	int[] arrayCopy = new int[array.length];
+    	int positionCounter = 0;
+    	for(int i = arrayCopy.length-1; i>-1; i--){
+    		arrayCopy[positionCounter] = array[i];
+    		positionCounter++;
+    	}
         /**
          * this method reverses the order of the array passed to it.
          * Not that this method does not have a return type. You do not need to copy the array first
