@@ -5,9 +5,9 @@ package homework;
 public class ArrayMethods {
 
     public static void main(String[] args) {
-        int[] nums = {1, 34, 21, 34, 33};
+        int[] nums = {10,10,10,10,9,8,7};
         int[] sorted = {9,6,3};
-        System.out.println(isSorted(sorted));
+        System.out.println(isSorted(nums));
         
     }
     
@@ -39,7 +39,7 @@ public class ArrayMethods {
     public static boolean isSorted(int[] array){
     	int yesCount = 0;
     		for(int i = 0; i < array.length-1;i++){
-    			if(array[i] > array[i+1]){
+    			if(array[i] >= array[i+1]){
     				yesCount++;
     			}
     		}
