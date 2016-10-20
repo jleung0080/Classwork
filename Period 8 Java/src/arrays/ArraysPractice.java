@@ -34,7 +34,7 @@ public class ArraysPractice {
 				}
 			}
 		}
-		for(int i=0; i<results.length; i++){
+		for(int i=0; i<results.length-1; i++){
 			System.out.println((i+numberOfDice)+" was rolled "+(int)(100*(double)results[i]/z.length)+ "% of the time");
 		}
 	}

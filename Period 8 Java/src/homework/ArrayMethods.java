@@ -5,9 +5,12 @@ package homework;
 public class ArrayMethods {
 
     public static void main(String[] args) {
-        int[] nums = {10,10,10,10,9,8,7};
+        int[] nums = {-6, 16, 10, 9, 1, 5};
         int[] sorted = {9,6,3};
-        System.out.println(isSorted(nums));
+        reverseOrder(sorted);
+        for(int i=0; i<sorted.length; i++){
+        	System.out.println(sorted[i]);
+        }
         
     }
     
@@ -69,10 +72,12 @@ public class ArrayMethods {
     public static void reverseOrder(int[] array){
     	int[] arrayCopy = new int[array.length];
     	int positionCounter = 0;
-    	for(int i = arrayCopy.length-1; i>-1; i--){
-    		arrayCopy[positionCounter] = array[i];
+    	for(int i = array.length-1; i >=0; i--){
+    		System.out.println(i);
+    		arrayCopy[array.length-i-1] = array[i];
     		positionCounter++;
     	}
+    	array = arrayCopy;
         /**
          * this method reverses the order of the array passed to it.
          * Not that this method does not have a return type. You do not need to copy the array first
