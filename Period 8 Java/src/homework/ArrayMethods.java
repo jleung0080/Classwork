@@ -5,7 +5,7 @@ package homework;
 public class ArrayMethods {
 
 	public static void main(String[] args) {
-		double[] nums = {1, 16, 10, 11, 5, -6};
+		double[] nums = {1.5, 6.66, -10.13, 15.99, .25, -.77,0};
 		int[] numss = {1, 16, 10, 11, 5, -6};
 		int[] sorted = {9,6,3};
 		printDouble(getStats(nums));
