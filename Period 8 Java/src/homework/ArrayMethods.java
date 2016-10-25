@@ -5,13 +5,21 @@ package homework;
 public class ArrayMethods {
 
 	public static void main(String[] args) {
-		int[] nums = {-6, 16, 10, 9, 1, 5};
+		double[] nums = {1, 16, 10, 11, 5, -6};
+		int[] numss = {1, 16, 10, 11, 5, -6};
 		int[] sorted = {9,6,3};
-		cycleThrough(nums,-2);
-		for(int i=0; i<nums.length; i++){
-			System.out.println(nums[i]);
-		}
+		printDouble(getStats(nums));
+	}
 
+	private static void printDouble(double[] array){
+		for(int i=0; i<array.length; i++){
+			System.out.println(array[i]);
+		}
+	}
+	private static void printInt(int[] array){
+		for(int i=0; i<array.length; i++){
+			System.out.println(array[i]);
+		}
 	}
 
 	public static int searchUnsorted(int[] arrayToSearch, int key){
@@ -52,7 +60,27 @@ public class ArrayMethods {
 			return false;
 		}
 	}
-
+	
+	private static void sortDouble(double[] array){
+		for(int i = 0;i<array.length-1; i++ ){
+			for(int index = 0; index<array.length-1; index++){
+				if(array[index]<array[index+1]){
+					swapDouble(array, index, index+1);
+				}
+			}
+			
+		}
+	}
+	private static void sortInt(int[] array){
+		for(int i = 0;i<array.length-1; i++ ){
+			for(int index = 0; index<array.length-1; index++){
+				if(array[index]<array[index+1]){
+					swapInt(array, index, index+1);
+				}
+			}
+			
+		}
+	}
 
 	public static double[] getStats(double[] array){
 		/** 
@@ -66,33 +94,38 @@ public class ArrayMethods {
 		 * index 5 = the number of values below the mean
 		 * */
 		double[] stats = new double[6];
-		int lower = 0;
-		int higher = 0;
-		for(int i = 0; i < array.length-1;i++){
-			if(array[i] <= array[i+1]){
-				swapDouble(array,i,i+1);
-			}
-		}
-		int sum = 0;
+		double lower = 0;
+		double higher = 0;
+		double sum = 0;
+		sortDouble(array);
+		stats[1] = array[0];
+		stats[2] = array[array.length-1];
+
 		for(int i=0; i<array.length; i++){
-			sum = sum+i;
+			sum = sum+array[i];
 		}
-		for(int i=0; i<array.length-1; i++){
+		stats[0] = sum/array.length;
+
+
+		for(int i=0; i<array.length; i++){
 			if(array[i]<stats[0]){
 				lower++;
 			}else{
 				higher++;
 			}
 		}
-
-
-
-		stats[0] = sum/array.length;
-		stats[1] = array[0];
-		stats[2] = array[array.length-1];
-		stats[3] = 
 		stats[4] = higher;
 		stats[5] = lower;
+
+
+
+		if(array.length%2 == 0){
+			stats[3] = ((double)array[array.length/2]+(double)array[array.length/2-1])/2;
+		}else{
+			stats[3] = array[(array.length-1)/2];
+		}
+
+
 
 
 
@@ -104,7 +137,7 @@ public class ArrayMethods {
 	public static void reverseOrder(int[] array){
 		int holder;
 		for(int i = 0;i< (int)(array.length/2); i++ ){
-			swap(array, i, array.length-i-1);
+			swapInt(array, i, array.length-i-1);
 		}
 
 		/**
@@ -137,7 +170,7 @@ public class ArrayMethods {
 
 
 	public static int longestConsecutiveSequence(int[] array1){
-		
+
 		/**This method counts the longest consecutive sequence in an array.
 		 * It does not matter where the sequence begins
 		 * If there are no consecutive numbers, the method should return '1'
@@ -154,7 +187,7 @@ public class ArrayMethods {
 	public static int longestSharedSequence(int[] array1, int[] array2){
 		int max = 0;
 		int count = 0;
-		
+
 		for(int seqStart = 0; seqStart < array1.length; seqStart++){
 			int seqEnd = seqStart;
 			int[] seq = getSequence(seqStart, seqEnd, array1);
@@ -165,7 +198,7 @@ public class ArrayMethods {
 				}
 			}
 		}
-		
+
 		/**This method counts the longest unbroken, shared sequence in TWO arrays.
 		 * The sequence does NOT have to be a consecutive sequence
 		 * It does NOT matter where the sequence begins, the arrays might not be the same length
@@ -206,13 +239,13 @@ public class ArrayMethods {
 		if(n>0){
 			for(int i = n; i>0; i--){
 				for(int index = array.length-1; index > 0; index --){
-					swap(array,0,index);
+					swapInt(array,0,index);
 				}
 			}
 		}else{
 			for(int i = n; i<0; i++){
 				for(int index = 0; index < array.length-1; index++){
-					swap(array,index,array.length-1);
+					swapInt(array,index,array.length-1);
 				}
 			}
 		}
@@ -250,7 +283,7 @@ public class ArrayMethods {
 	}
 
 
-	private static void swap(int[] array, int first, int second){
+	private static void swapInt(int[] array, int first, int second){
 		int holder = array[first];
 		array[first] = array[second];
 		array[second] = holder;
