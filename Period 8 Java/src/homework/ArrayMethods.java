@@ -83,16 +83,6 @@ public class ArrayMethods {
 	}
 
 	public static double[] getStats(double[] array){
-		/** 
-		 * This method return a double[] contain a WHOLE BUNCH of stats
-		 * The double array must keep the following stats about the array parameter:
-		 * index 0 = the mean
-		 * index 1 = the max
-		 * index 2 = the min
-		 * index 3 = the median
-		 * index 4 = the number of values greater than or equal to the mean
-		 * index 5 = the number of values below the mean
-		 * */
 		double[] stats = new double[6];
 		double lower = 0;
 		double higher = 0;
@@ -117,19 +107,11 @@ public class ArrayMethods {
 		stats[4] = higher;
 		stats[5] = lower;
 
-
-
 		if(array.length%2 == 0){
 			stats[3] = ((double)array[array.length/2]+(double)array[array.length/2-1])/2;
 		}else{
 			stats[3] = array[(array.length-1)/2];
 		}
-
-
-
-
-
-
 
 		return stats;
 	}
