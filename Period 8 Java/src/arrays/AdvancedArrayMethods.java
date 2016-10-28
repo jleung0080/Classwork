@@ -3,32 +3,36 @@ package arrays;
 public class AdvancedArrayMethods {
 	static int[] array;
 	public static void main(String[] args) {
-		String[] array = {"a", "b", "c", "d", "e", "f", "g", "h"};
-		swap(array, 0,array.length-1);
-	}
-
-	private static void swap(String[] arr, int i, int j) {
-
+		listPrimes(120);
 
 	}
-
-	private static void methodA(int[] someArray){
-		int[] newArray = new int[someArray.length];
-	}
-
-
-
-
-
-	public static void copyArray(int[] original, int[] target){
-		if(original.length == target.length){
-			for(int i=0; i<original.length;i++){
-				target[i] = original[i];
+	private static void listPrimes(int limit){
+		int lastToCheck = (int)(Math.sqrt(limit));
+		boolean[] numbers = new boolean[limit+1];
+		for(int i = 0; i<limit+1; i++){
+			numbers[i] = true;
+		}
+		numbers[0] = false;
+		numbers[1] = false;
+		for(int prime = 2; prime <= lastToCheck; prime++){
+			if(numbers[prime]){
+				System.out.println("\n" +prime + " is prime, crossing off:");
+				for(int i = (int)(Math.pow(prime, 2)); i<limit+1; i+=prime){
+					System.out.print(i+", ");
+					numbers[i]= false;
+				}
 			}
-		}else{
-			System.out.println("ERROR: tried to copy arrays of two different lengths");
+		}
+		System.out.println("\nThe primes are:");
+		for(int index = 0; index<numbers.length; index++){
+			if(numbers[index]){
+				System.out.print(index + ", ");
+			}
 		}
 	}
+
+
+
 
 
 
