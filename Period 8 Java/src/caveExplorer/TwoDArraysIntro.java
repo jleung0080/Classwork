@@ -5,6 +5,45 @@ import java.util.Arrays;
 public class TwoDArraysIntro {
 	
 	public static void main(String[] args){
+		{
+			String[][] pic = new String[10][8];
+			for(int row = 0; row <pic.length; row++){
+				//put an entire array on each row
+				for(int col = 0; col<pic[row].length; col++){
+					//populate with coodinates
+					pic[row][col] = (" ");
+				}
+			}
+			
+			
+			
+			
+			
+			//grassy field
+			for(int row = pic.length-2; row<pic.length; row++){
+				for(int col = 0; col < pic[row].length; col++){
+					pic[row][col] = "w";
+				}
+			}
+			
+			
+			
+			//print the 2d array
+			// every element in a 2d array is itself an array
+			//so a for-each loop looks like this
+			for(String[] row : pic){
+				for(String col : row){
+					System.out.print(col);
+				}
+				System.out.println();
+			}
+			
+			
+		}
+		
+	}
+	
+	public static void intro(){
 		String[] xox = {"x", "o", "x", "o", "x"};
 		System.out.println(Arrays.toString(xox));
 		
