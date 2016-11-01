@@ -10,7 +10,7 @@ public class TwoDArraysIntro {
 			for(int row = 0; row <pic.length; row++){
 				//put an entire array on each row
 				for(int col = 0; col<pic[row].length; col++){
-					//populate with coodinates
+					//populate with coordinates
 					pic[row][col] = (" ");
 				}
 			}
