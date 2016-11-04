@@ -21,9 +21,9 @@ public class TwoDArraysIntro {
 		//		printPic(field);
 
 
-		//printPic(grid(5,5));
 
 		arr2D = new String[5][5];
+		printPic(grid(arr2D));
 		pic = new String[5][5];
 		for(int row = 0; row<arr2D.length; row++){
 			for(int col = 0; col<arr2D[row].length; col++){
@@ -122,22 +122,23 @@ public class TwoDArraysIntro {
 	
 	
 	
-	public static String[][] grid(int rows, int cols){
-		String[][] copy = new String[rows*3][cols*3];
-		for(int row = 0; row<cols*3; row++){
+	public static String[][] grid(String[][] array){
+		String[][] copy = new String[array.length*3+1][array[0].length*3+1];
+		for(int row = 0; row<copy.length; row++){
 			for(int col = 0; col < copy[row].length; col++){
 				if(row%3 == 0){
 					copy[row][col] = "_";
 				}else{
 					copy[row][col] = " ";
 				}
-
 				if(col%3 == 0){
 					copy[row][col] = "|";
 				}
+				copy[0][col] = "_";
 			}
 		}
 		return copy;
+	
 	}
 
 
