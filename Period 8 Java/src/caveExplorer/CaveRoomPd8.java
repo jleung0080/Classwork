@@ -133,7 +133,7 @@ public class CaveRoomPd8 {
 		int indexFound = -1;
 		for(int i =0; i<keys.length; i++){
 			if(keys[i].equals(input)){
-				indexFound = 1;
+				indexFound = i;
 				break;
 			}
 		}
