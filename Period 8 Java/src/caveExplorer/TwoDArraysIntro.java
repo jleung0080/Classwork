@@ -23,7 +23,6 @@ public class TwoDArraysIntro {
 
 
 		arr2D = new String[5][5];
-		printPic(grid(arr2D));
 		pic = new String[5][5];
 		for(int row = 0; row<arr2D.length; row++){
 			for(int col = 0; col<arr2D[row].length; col++){
@@ -42,6 +41,12 @@ public class TwoDArraysIntro {
 
 
 	}
+
+	
+	
+	
+	
+	
 
 	private static void startExploring() {
 		while(true){
