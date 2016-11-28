@@ -15,27 +15,27 @@ public class TwoDArraysIntro {
 
 
 	public static void main(String[] args){
-		//		boolean[][] mines = new boolean[6][6];
-		//		plantMines(mines);
-		//		String[][] field = createField(mines);
-		//		printPic(field);
+//				boolean[][] mines = new boolean[6][6];
+//				plantMines(mines);
+//				String[][] field = createField(mines);
+//				printPic(field);
+	printPic(grassyPic());
 
 
-
-		arr2D = new String[5][5];
-		pic = new String[5][5];
-		for(int row = 0; row<arr2D.length; row++){
-			for(int col = 0; col<arr2D[row].length; col++){
-				arr2D[row][col] = "(" + row + ", " + col +")";
-			}
-		}
-
-		starti = 2;
-		startj = 2;
-		treasurei = 4;
-		treasurej = 3;
-		startExploring();
-
+//		arr2D = new String[5][5];
+//		pic = new String[5][5];
+//		for(int row = 0; row<arr2D.length; row++){
+//			for(int col = 0; col<arr2D[row].length; col++){
+//				arr2D[row][col] = "(" + row + ", " + col +")";
+//			}
+//		}
+//
+//		starti = 2;
+//		startj = 2;
+//		treasurei = 4;
+//		treasurej = 3;
+//		startExploring();
+//
 
 
 
@@ -223,7 +223,7 @@ public class TwoDArraysIntro {
 
 	}
 
-	public static void grassyPic(){
+	public static String[][] grassyPic(){
 		String[][] pic = new String[10][8];
 		for(int row = 0; row <pic.length; row++){
 			//put an entire array on each row
@@ -255,6 +255,7 @@ public class TwoDArraysIntro {
 			pic[row][0] = "|";
 			pic[row][pic[0].length-1] = "|"; 
 		}
+		return pic;
 	}
 
 
