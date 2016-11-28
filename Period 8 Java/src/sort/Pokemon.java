@@ -1,19 +1,29 @@
 package sort;
 
 public class Pokemon {
-	int level;
-	int hp;
-	String name;
-	boolean poisoned;
+	private int level;
+	private int hp;
+	private String name;
+	private boolean poisoned;
 
-	private void status(int lev, int startHp){
-		level = lev;
-		hp = startHp;
+	public Pokemon(String name, int level) {
+		this.name = name;
+		this.level = level;
+		this.poisoned = false;
+		hp = 100;
+	}
+	
+	public void attack(Pokemon target, Attack attack){
+		if(Math.random()<.9){
+			attack.attack(target);
+			System.out.println("The attack hit");
+		}else{
+			System.out.println("The attack missed");
+		}
 	}
 	
 	private void iChooseYou(){
-		System.out.print(name);
-		System.out.print(name);
+		System.out.println(name+ " " +name);
 	}
 	
 	private String getName(){
