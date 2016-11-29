@@ -22,26 +22,30 @@ public class Pokemon {
 		}
 	}
 	
-	private void iChooseYou(){
+	public void iChooseYou(){
 		System.out.println(name+ " " +name);
 	}
 	
-	private String getName(){
+	public String getName(){
 		return name;
 	}
 	
-	private void setHP(int newHP){
+	public void setHP(int newHP){
 		hp = newHP;
 	}
 	
-	private void setPoisoned(boolean b){
+	public void setPoisoned(boolean b){
 		poisoned = b;
 	}
 	
-	private void lapse(){
+	public void lapse(){
 		if(poisoned){
 			hp -= 15;
 		}
+	}
+
+	public int getHP() {
+		return hp;
 	}
 	
 }
