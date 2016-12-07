@@ -1,5 +1,7 @@
 package guiPractice;
 
+import java.awt.Graphics;
+
 import javax.swing.JFrame;
 
 public class GUIApplication extends JFrame{
@@ -28,7 +30,9 @@ public class GUIApplication extends JFrame{
 		currentScreen = startScreen;
 	}
 	
-	
+	public void paint(Graphics g){
+		g.drawImage(currentScreen.getImage(), 0, 0, null);
+	}
 	
 	
 }
