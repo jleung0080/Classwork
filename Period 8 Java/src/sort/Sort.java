@@ -11,7 +11,7 @@ public class Sort {
 		//		System.out.println(Arrays.toString(arrayToSort));
 		//		selectionSort(copy(arrayToSort));
 
-		int[] arrayToSort={133,0,-5,31,12,12,2};
+		int[] arrayToSort={133,0,-5,31,12,12,2,11};
 		int[] sorted = mergeSort(arrayToSort);
 		for(int a:sorted){
 			System.out.println(a);
