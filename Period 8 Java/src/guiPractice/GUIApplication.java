@@ -3,12 +3,12 @@ package guiPractice;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 
-public class GUIApplication extends JFrame{
+public abstract class GUIApplication extends JFrame{
 
 	private Screen currentScreen;
 	
-	public static void main(String[] args) {
-		new GUIApplication();
+	public void setScreen(Screen screen){
+		currentScreen = screen;
 	}
 	
 	public GUIApplication(){
@@ -25,10 +25,12 @@ public class GUIApplication extends JFrame{
 		
 	}
 
-	protected void initScreen() {
-		Screen startScreen = new Screen(getWidth(), getHeight());
-		currentScreen = startScreen;
-	}
+	/**
+	 * method for creating and setting the starting screen
+	 */
+	
+	protected abstract void initScreen();
+	
 	
 	public void paint(Graphics g){
 		g.drawImage(currentScreen.getImage(), 0, 0, null);
