@@ -8,7 +8,7 @@ public interface Visible {
 	public int getX();
 	public int getY();
 	public int getWidth();
-	public int getheight();
+	public int getHeight();
 	public boolean isAnimated();
 	public void update();
 }
