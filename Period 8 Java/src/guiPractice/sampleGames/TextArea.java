@@ -19,26 +19,44 @@ public class TextArea extends TextLabel {
 	
 	
 	
-	
-	public void update(Graphics2D g) {
+	public void update(Graphics2D g){
+		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		g.setFont(new Font(getFont(), Font.PLAIN, getSize()));
 		FontMetrics fm = g.getFontMetrics();
-		
-		String text = getText();
-		String font = getFont();
-		int size = getSize();
-		String[] words = text.split(" ");
-		int[] lengths = new int[words.length];
-		int spaceLength = fm.stringWidth(" ");
-		for(int i = 0; i < words.length; i++){
-			lengths[i] = fm.stringWidth(words[i]);
+		g.setColor(Color.black);
+		if(getText() != null){
+			//split text into array of words
+			String[] words = getText().split(" ");
+			if(words.length >0){
+				//index of word
+				int i = 0;
+				final int SPACING = 2;
+				//y value represents y-coordinate of each line
+				int y = 0 + fm.getHeight()+SPACING;
+				String line = words[i] + " ";
+				i++;
+				//loop as long as there are words left
+				while(i < words.length){
+					//add to current line until horizontal space is outside of bounds
+					while(i < words.length && fm.stringWidth(line) + fm.stringWidth(words[i]) < getWidth()){
+						line += words[i]+" ";
+						i++;
+					}
+					//keep adding lines while there is vertical space
+					if(y < getHeight()){
+						g.drawString(line, 2, y);
+						y += fm.getDescent() + fm.getHeight()+SPACING;
+						//rest line
+						line = "";
+					}else{
+						//no more vertical space
+						break;//print no more text
+					}
+				}
+			}
+
 		}
-		for(int word = 0; word< words.length; word++){
-			
-		}
-		
-		
-		
-		
-		
 	}
+
 }
+
