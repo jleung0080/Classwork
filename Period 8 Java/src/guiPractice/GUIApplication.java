@@ -8,7 +8,21 @@ public abstract class GUIApplication extends JFrame{
 	private Screen currentScreen;
 	
 	public void setScreen(Screen screen){
+		if(currentScreen != null){
+			if(currentScreen.getMouseListener() != null){
+				removeMouseListener(currentScreen.getMouseListener());
+			}
+			if(currentScreen.getMouseMotionListener() != null){
+				removeMouseMotionListener(currentScreen.getMouseMotionListener());
+			}
+		}
 		currentScreen = screen;
+		//add controls for new screen
+		if(currentScreen != null){
+			addMouseListener(currentScreen.getMouseListener());
+			addMouseMotionListener(currentScreen.getMouseMotionListener());
+		}
+		
 	}
 	
 	public GUIApplication(){

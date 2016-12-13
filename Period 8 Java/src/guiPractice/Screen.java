@@ -57,6 +57,14 @@ public abstract class Screen {
 	public BufferedImage getImage(){
 		return image;
 	}
+
+	public Object getMouseListener() {
+		return null;
+	}
+
+	public Object getMouseMotionListener() {
+		return null;
+	}
 	
 	
 	
