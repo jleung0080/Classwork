@@ -3,7 +3,7 @@ package guiPractice;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 
-public abstract class GUIApplication extends JFrame{
+public abstract class GUIApplication extends JFrame implements Runnable{
 
 	private Screen currentScreen;
 	
