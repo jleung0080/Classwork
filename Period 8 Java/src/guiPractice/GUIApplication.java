@@ -50,5 +50,19 @@ public abstract class GUIApplication extends JFrame implements Runnable{
 		g.drawImage(currentScreen.getImage(), 0, 0, null);
 	}
 	
+	public void run(){
+		while(true){
+			currentScreen.update();
+			//update the window
+			repaint();
+			try {
+				Thread.sleep(40);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	
 }
