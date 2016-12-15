@@ -1,10 +1,8 @@
 package guiPracticeComponent;
 
-public abstract interface Action {
+public interface Action {
 
 	
-	public static Action act(Action a){
-		return a;
-	}
+	public void act();
 	
 }
