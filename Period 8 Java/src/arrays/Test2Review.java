@@ -8,7 +8,7 @@ public class Test2Review {
 		grid = new boolean[5][5];
 		buttonClick(4,4);
 		printGrid(grid);
-		buttonClick(4,4);
+		buttonClick(4,-1);
 		printGrid(grid);
 	}
 
