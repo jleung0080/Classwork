@@ -23,7 +23,7 @@ public class MyScreen extends Screen implements MouseMotionListener, MouseListen
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		secondPic = new Graphic(200,200,.25,"resources/sampleImages/ghost.jpg");
+		secondPic = new Graphic(200,200,1,"resources/sampleImages/images.jpg");
 		back = new Button(50,50,100,60,"Back", Color.GRAY, new Action() {
 			
 			public void Act() {
