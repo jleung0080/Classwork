@@ -2,6 +2,7 @@ package guiPractice.sampleGames;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ import guiPracticeComponent.Graphic;
 import guiPracticeComponent.TextLabel;
 import guiPracticeComponent.Visible;
 
-public class CoordinateScreen extends Screen implements MouseMotionListener{
+public class CoordinateScreen extends Screen implements MouseMotionListener,MouseListener{
 
 	private TextLabel label;
 	private TextArea paragraph;
@@ -46,7 +47,11 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 
 	}
 
-
+	public MouseListener getMouseListener(){
+		return this;
+	}
+	
+	
 	public MouseMotionListener getMouseMotionListener(){
 		return this;
 	}
@@ -54,6 +59,38 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 	public void mouseMoved(MouseEvent m) {
 		label.setText("Mouse at "+m.getX()+", "+m.getY());
 		update();
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent m) {
+		// TODO Auto-generated method stub
+		if(button.isHovered(m.getX(), m.getY())){
+			button.act();
+		}
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

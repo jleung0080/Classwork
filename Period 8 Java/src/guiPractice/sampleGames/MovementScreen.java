@@ -1,21 +1,16 @@
 package guiPractice.sampleGames;
 
-import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 import guiPractice.Screen;
-import guiPracticeComponent.Action;
-import guiPracticeComponent.Button;
-import guiPracticeComponent.Graphic;
 import guiPracticeComponent.Visible;
 
-public class MyScreen extends Screen implements MouseListener{
-	private Graphic lol;
-	private Button back;
+public class MovementScreen extends Screen implements MouseListener,MouseMotionListener{
 
-	public MyScreen(int width, int height) {
+	public MovementScreen(int width, int height) {
 		super(width, height);
 		// TODO Auto-generated constructor stub
 	}
@@ -23,20 +18,30 @@ public class MyScreen extends Screen implements MouseListener{
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
 		// TODO Auto-generated method stub
-		back = new Button(50,50,100,60,"Back",Color.gray, new Action(){
-			public void act(){
-				MouseFollower.game.setScreen(MouseFollower.coordScreen);
-			}
-		});
-				viewObjects.add(back);
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if(back.isHovered(e.getX(), e.getY())){
-			back.act();
-		}
+		
 	}
 
 	@Override
@@ -63,4 +68,7 @@ public class MyScreen extends Screen implements MouseListener{
 		
 	}
 
+	public MouseListener getMouseListener(){
+		return this;
+	}
 }
