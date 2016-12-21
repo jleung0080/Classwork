@@ -7,9 +7,9 @@ import java.util.List;
 
 import guiPractice.Screen;
 
-public class ClickableScreen extends Screen implements MouseListener{
+public class ClickGraphicScreen extends Screen implements MouseListener{
 	
-	public ClickableScreen(int width, int height) {
+	public ClickGraphicScreen(int width, int height) {
 		super(width, height);
 		// TODO Auto-generated constructor stub
 	}

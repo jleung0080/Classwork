@@ -1,7 +1,7 @@
 package guiPractice.sampleGames;
 
 import guiPractice.GUIApplication;
-import guiPractice.component.ClickableScreen;
+import guiPractice.component.ClickGraphicScreen;
 
 public class ClickGraphicsGame extends GUIApplication {
 
@@ -12,7 +12,7 @@ public class ClickGraphicsGame extends GUIApplication {
 	@Override
 	protected void initScreen() {
 		// TODO Auto-generated method stub
-		ClickableScreen gcs = new ClickableScreen(getWidth(),getHeight());
+		ClickGraphicScreen gcs = new ClickGraphicScreen(getWidth(),getHeight());
 		setScreen(gcs);
 	}
 
