@@ -2,33 +2,26 @@ package guiPractice.sampleGames;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.List;
 
+import guiPractice.Screen;
 import guiPractice.component.Action;
 import guiPractice.component.ClickableGraphic;
 import guiPractice.component.Visible;
 
-public class GraphicsClickScreen extends ClickableGraphic implements MouseListener{
+public class GraphicsClickScreen extends Screen implements MouseListener{
 	
+	public GraphicsClickScreen(int width, int height) {
+		super(width, height);
+		// TODO Auto-generated constructor stub
+	}
+
 	private ClickableGraphic bboy;
-	private Action action;
 
-	public GraphicsClickScreen(int x, int y, String imageLocation) {
-		super(x, y, imageLocation);
-		// TODO Auto-generated constructor stub
-	}
+	
 
-	public GraphicsClickScreen(int x, int y, double scale, String imageLocation) {
-		super(x, y, scale, imageLocation);
-		// TODO Auto-generated constructor stub
-	}
-
-	public GraphicsClickScreen(int x, int y, int w, int h, String imageLocation) {
-		super(x, y, w, h, imageLocation);
-		// TODO Auto-generated constructor stub
-	}
-
-	public void initObjects(List<Visible> viewObjects){
+	public void initObjects(ArrayList<Visible> viewObjects){
 		bboy = new ClickableGraphic(300,300,.1,"resources/sampleImages/bboy.jpg");
 		bboy.setAction(new Action(){
 			public void act(){
@@ -36,11 +29,10 @@ public class GraphicsClickScreen extends ClickableGraphic implements MouseListen
 			}
 		}
 				);
+		viewObjects.add(bboy);
 	}
 	
-	public void setAction(Action a){
-		this.action = a;
-	}
+
 	
 	public MouseListener getMouseListener(){
 		return this;
@@ -49,7 +41,7 @@ public class GraphicsClickScreen extends ClickableGraphic implements MouseListen
 	public void mouseClicked(MouseEvent m) {
 		// TODO Auto-generated method stub
 		if(bboy.isHovered(m.getX(), m.getY())){
-			action.act();
+			bboy.act();
 		}
 	}
 
@@ -76,5 +68,7 @@ public class GraphicsClickScreen extends ClickableGraphic implements MouseListen
 		// TODO Auto-generated method stub
 
 	}
+
+
 	
 }

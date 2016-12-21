@@ -1,13 +1,11 @@
 package guiPractice.component;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+
 import java.util.List;
 
-public class ClickableGraphic extends Graphic implements Clickable,MouseListener {
+public class ClickableGraphic extends Graphic implements Clickable {
 
 	private Action action;
-
 
 	public ClickableGraphic(int x, int y, String imageLocation) {
 		super(x, y, imageLocation);
@@ -34,38 +32,9 @@ public class ClickableGraphic extends Graphic implements Clickable,MouseListener
 		// TODO Auto-generated method stub
 		if(action != null)action.act();
 	}
-
+	
 	public void setAction(Action a){
 		this.action = a;
-	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 

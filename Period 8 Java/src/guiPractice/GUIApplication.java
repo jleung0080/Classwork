@@ -44,6 +44,10 @@ public abstract class GUIApplication extends JFrame implements Runnable{
 	 * 
 	 */
 	
+	public GUIApplication(int i, int j) {
+		// TODO Auto-generated constructor stub
+	}
+
 	protected abstract void initScreen();
 	
 	public void paint(Graphics g){
