@@ -8,22 +8,22 @@ import guiPractice.component.Action;
 import guiPractice.component.ClickableGraphic;
 import guiPractice.component.Visible;
 
-public class ClickableMouseGame extends ClickableGraphic implements MouseListener{
+public class GraphicClickScreen extends ClickableGraphic implements MouseListener{
 	
 	private ClickableGraphic bboy;
 	private Action action;
 
-	public ClickableMouseGame(int x, int y, String imageLocation) {
+	public GraphicClickScreen(int x, int y, String imageLocation) {
 		super(x, y, imageLocation);
 		// TODO Auto-generated constructor stub
 	}
 
-	public ClickableMouseGame(int x, int y, double scale, String imageLocation) {
+	public GraphicClickScreen(int x, int y, double scale, String imageLocation) {
 		super(x, y, scale, imageLocation);
 		// TODO Auto-generated constructor stub
 	}
 
-	public ClickableMouseGame(int x, int y, int w, int h, String imageLocation) {
+	public GraphicClickScreen(int x, int y, int w, int h, String imageLocation) {
 		super(x, y, w, h, imageLocation);
 		// TODO Auto-generated constructor stub
 	}
@@ -49,7 +49,7 @@ public class ClickableMouseGame extends ClickableGraphic implements MouseListene
 	public void mouseClicked(MouseEvent m) {
 		// TODO Auto-generated method stub
 		if(bboy.isHovered(m.getX(), m.getY())){
-			act();
+			action.act();
 		}
 	}
 
