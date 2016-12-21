@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import guiPractice.Screen;
 import guiPractice.component.Action;
 import guiPractice.component.Button;
+import guiPractice.component.ClickableGraphic;
 import guiPractice.component.Graphic;
 import guiPractice.component.TextArea;
 import guiPractice.component.TextLabel;
