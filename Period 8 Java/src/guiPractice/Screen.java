@@ -15,7 +15,7 @@ public abstract class Screen {
 	private int width;
 	private int height;
 	protected BufferedImage image;
-	private ArrayList<Visible> viewObjects;
+	protected ArrayList<Visible> viewObjects;
 	
 	public Screen(int width, int height){
 		viewObjects = new ArrayList<Visible>();
