@@ -8,22 +8,22 @@ import guiPractice.component.Action;
 import guiPractice.component.ClickableGraphic;
 import guiPractice.component.Visible;
 
-public class GraphicClickScreen extends ClickableGraphic implements MouseListener{
+public class GraphicsClickScreen extends ClickableGraphic implements MouseListener{
 	
 	private ClickableGraphic bboy;
 	private Action action;
 
-	public GraphicClickScreen(int x, int y, String imageLocation) {
+	public GraphicsClickScreen(int x, int y, String imageLocation) {
 		super(x, y, imageLocation);
 		// TODO Auto-generated constructor stub
 	}
 
-	public GraphicClickScreen(int x, int y, double scale, String imageLocation) {
+	public GraphicsClickScreen(int x, int y, double scale, String imageLocation) {
 		super(x, y, scale, imageLocation);
 		// TODO Auto-generated constructor stub
 	}
 
-	public GraphicClickScreen(int x, int y, int w, int h, String imageLocation) {
+	public GraphicsClickScreen(int x, int y, int w, int h, String imageLocation) {
 		super(x, y, w, h, imageLocation);
 		// TODO Auto-generated constructor stub
 	}
