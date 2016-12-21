@@ -48,7 +48,9 @@ public class ClickableMouseGame extends ClickableGraphic implements MouseListene
 	
 	public void mouseClicked(MouseEvent m) {
 		// TODO Auto-generated method stub
-		if(bboy.isHovered(m.getX(), m.getY()));
+		if(bboy.isHovered(m.getX(), m.getY())){
+			act();
+		}
 	}
 
 	@Override
