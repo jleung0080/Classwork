@@ -1,4 +1,4 @@
-package guiPractice.sampleGames;
+package guiPractice.component;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -6,13 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import guiPractice.Screen;
-import guiPractice.component.Action;
-import guiPractice.component.ClickableGraphic;
-import guiPractice.component.Visible;
 
-public class GraphicsClickScreen extends Screen implements MouseListener{
+public class ClickableScreen extends Screen implements MouseListener{
 	
-	public GraphicsClickScreen(int width, int height) {
+	public ClickableScreen(int width, int height) {
 		super(width, height);
 		// TODO Auto-generated constructor stub
 	}
