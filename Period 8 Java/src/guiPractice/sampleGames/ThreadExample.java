@@ -15,7 +15,7 @@ public class ThreadExample implements Runnable{
 	
 	public ThreadExample(int x){
 		number = x;
-		sleepTime = (int) (1000*Math.random());
+		sleepTime = (int) (10000*Math.random());
 	}
 	
 	public void run(){

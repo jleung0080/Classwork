@@ -46,6 +46,13 @@ public abstract class GUIApplication extends JFrame implements Runnable{
 	
 	public GUIApplication(int i, int j) {
 		// TODO Auto-generated constructor stub
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setUndecorated(false);
+		int x = 40; 
+		int y = 40;
+		setBounds(x,y,i,j);
+		initScreen();
+		setVisible(true);
 	}
 
 	protected abstract void initScreen();
