@@ -44,14 +44,14 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 	 *to implement later, after Character Team implements PlayerInterface
 	 */
 	private PlayerInterface getAPlayer() {
-		return null;
+		return new Player(20,20);
 	}
 
 	/**
 	 *to implement later, after EnemyTeam implements MoleInterface
 	 */
 	private MoleInterface getAMole() {
-		return null;
+		return new Mole((int)(getWidth()*Math.random())-100,(int)(getHeight()*Math.random()));
 	}
 
 	private void changeText(String s){
