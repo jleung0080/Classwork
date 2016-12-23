@@ -32,12 +32,12 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 	public void initAllObjects(List<Visible> viewObjects) {
 		// TODO Auto-generated method stub
 		moles = new ArrayList<MoleInterface>();
-		//		player = getAPlayer();
+		player = getAPlayer();
 		label =  new TextLabel(getWidth()/2-60, getHeight()/2-10, 100, 40, "Ready...");
 		timeLabel = new TextLabel(getWidth()/2-40,20,100,40,"");
 		viewObjects.add(label);
 		viewObjects.add(timeLabel);
-		//		viewObjects.add(player);
+		viewObjects.add(player);
 	}
 
 	/**
