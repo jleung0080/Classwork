@@ -32,7 +32,8 @@ public abstract class ClickableScreen extends Screen implements MouseListener{
 		return this;
 	}
 
-
+	
+	
 
 	public abstract void initAllObjects(List<Visible> list);
 

@@ -14,18 +14,13 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 	private TextLabel label;
 	private TextLabel timeLabel;
 	private double timeLeft;
-	private int sleepTime;
-	private int number;
+	private long sleepTime;
 
 	public WhackAMoleScreen(int width, int height) {
 		super(width, height);
-		timeLeft = 60.0;
-		Thread screen = new Thread((Runnable) this);
-		Thread run = new Thread(counter(2));
-		Thread go = new Thread(counter(3));
-		run.start();
-		go.start();
-		screen.start();
+		timeLeft = 30.0;
+		Thread play = new Thread(this);
+		play.start();
 
 
 
@@ -37,10 +32,11 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 		// TODO Auto-generated method stub
 		moles = new ArrayList<MoleInterface>();
 		//		player = getAPlayer();
-		label =  new TextLabel(265, 200, 100, 40, "Ready...");
-		timeLabel = new TextLabel(280,10,100,40,timeLeft+"");
+		label =  new TextLabel(getWidth()/2-60, getHeight()/2-10, 100, 40, "Ready...");
+		timeLabel = new TextLabel(getWidth()/2-40,20,100,40,"");
 		viewObjects.add(label);
 		viewObjects.add(timeLabel);
+		//		viewObjects.add(player);
 	}
 
 	/**
@@ -57,27 +53,32 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 		return null;
 	}
 
-
-	public Runnable counter(int x){
-		sleepTime = x;
-		return null;
+	private void changeText(String s){
+		try{
+			Thread.sleep(1000);
+			label.setText(s);
+		}catch(InterruptedException e){
+			e.printStackTrace();
+		}
 	}
-	
+
+
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		try {
-			Thread.sleep(sleepTime);
-			if(sleepTime == 2){
-				label =  new TextLabel(265, 200, 100, 40, "Set...");
+		changeText("Set...");
+		changeText("Go!");
+		changeText("");
+		timeLabel.setText(""+timeLeft);
+		while(timeLeft>0){
+			//frame updates every 100ms
+			try{
+				Thread.sleep(100);
+			}catch(InterruptedException e){
+				e.printStackTrace();
 			}
-			if(sleepTime == 3){
-				label =  new TextLabel(265, 200, 100, 40, "Go!!!");
-			}
-			
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			timeLeft -= .1;
+			timeLabel.setText(""+(int)(timeLeft*10)/10.0);
 		}
 	}
 

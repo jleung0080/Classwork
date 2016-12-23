@@ -16,25 +16,25 @@ public abstract class Screen {
 	private int height;
 	protected BufferedImage image;
 	protected ArrayList<Visible> viewObjects;
-	
+
 	public Screen(int width, int height){
 		viewObjects = new ArrayList<Visible>();
 		this.width = width;
 		this.height = height;
 		initObjects(viewObjects);
 		initImage();
-		
-		
+
+
 	}
 
 	public abstract void initObjects(ArrayList<Visible> viewObjects2);
-	
-	
+
+
 
 	private void initImage() {
 		image = new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
 		update();
-		
+
 	}
 
 	protected void update() {
@@ -44,27 +44,27 @@ public abstract class Screen {
 		g.setColor(Color.white);
 		g.fillRect(0, 0, image.getWidth(), image.getHeight());
 		g.setColor(Color.black);
-		
+
 		// draw visible components
 		for(Visible v: viewObjects){
 			g.drawImage(v.getImage(), v.getX(), v.getY(), null);
 		}
-		
-		
-//		g.setFont(new Font("Helvetica",Font.PLAIN,20));
-//		g.drawString("Hello", 40, 80);
-//		g.drawOval(0, 40, 120, 80);
-//		g.drawRect(20, 120, 80,110);
-//		g.drawLine(100, 120, 110, 200);
-//		
-//		g.setColor(Color.green);
-//		for(int i = 0; i < image.getWidth(); i+=4){
-//			g.drawLine(i, 230, i, 238);
-//		}
-			
-		
+
+
+		//		g.setFont(new Font("Helvetica",Font.PLAIN,20));
+		//		g.drawString("Hello", 40, 80);
+		//		g.drawOval(0, 40, 120, 80);
+		//		g.drawRect(20, 120, 80,110);
+		//		g.drawLine(100, 120, 110, 200);
+		//		
+		//		g.setColor(Color.green);
+		//		for(int i = 0; i < image.getWidth(); i+=4){
+		//			g.drawLine(i, 230, i, 238);
+		//		}
+
+
 	}
-	
+
 	public void remove(Visible v){
 		/**ArrayList notes
 		 * While this method is very simple, do not underestimate
@@ -94,21 +94,21 @@ public abstract class Screen {
 		 * 	}
 		 * }
 		 */
-		
+
 		viewObjects.remove(v);
 		/**
 		 * This removes the object that has the same identity as v, not an object that is equal to v
 		 */
 	}
-	
+
 	public void moveToFront(Visible v){
 		if(viewObjects.contains(v)){
 			viewObjects.remove(v);
 			viewObjects.add(v);
-			
+
 		}
 	}
-	
+
 	public void moveToBack(Visible v){
 		if(viewObjects.contains(v)){
 			viewObjects.remove(v);
@@ -117,16 +117,23 @@ public abstract class Screen {
 			//forward by 1
 			//increased the size by 1
 			//adds object to index n
-			
+
 		}
 	}
-	
+
 	public BufferedImage getImage(){
 		return image;
 	}
 
 	public MouseListener getMouseListener() {
 		return null;
+	}
+
+	public int getWidth(){
+		return width;
+	}
+	public int getHeight(){
+		return height;
 	}
 
 	public MouseMotionListener getMouseMotionListener() {
@@ -137,4 +144,6 @@ public abstract class Screen {
 		// TODO Auto-generated method stub
 		viewObjects.add(v);
 	}
+	
+	
 }
