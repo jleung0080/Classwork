@@ -1,26 +1,36 @@
 package whackAMole;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 import guiPractice.component.Component;
 
 public class Player extends Component implements PlayerInterface {
-
-	public Player(int x, int y, int w, int h) {
-		super(x, y, w, h);
+	private int score;
+	
+	
+	public Player(int x, int y) {
+		super(x, y, 100, 100);
+		score = 0;
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void increaseScore(int i) {
 		// TODO Auto-generated method stub
-
+		score+=i;
 	}
 
 	@Override
 	public void update(Graphics2D g) {
 		// TODO Auto-generated method stub
-
+		g.setColor(Color.white);
+		g.fillRect(0, 0, getWidth(), getHeight());
+		g.setColor(Color.black);
+		g.drawOval(0,0,100,100);
+		g.drawString(""+score, 45, 55);
+		
+		
 	}
 
 }

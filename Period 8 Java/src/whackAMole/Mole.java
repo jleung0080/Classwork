@@ -2,32 +2,23 @@ package whackAMole;
 
 import guiPractice.component.ClickableGraphic;
 
-public class Mole extends ClickableGraphic implements MoleInterface {
-
-	public Mole(int x, int y, String imageLocation) {
-		super(x, y, imageLocation);
-		// TODO Auto-generated constructor stub
-	}
-
-	public Mole(int x, int y, double scale, String imageLocation) {
-		super(x, y, scale, imageLocation);
-		// TODO Auto-generated constructor stub
-	}
-
-	public Mole(int x, int y, int w, int h, String imageLocation) {
-		super(x, y, w, h, imageLocation);
-		// TODO Auto-generated constructor stub
+public class Mole extends ClickableGraphic implements MoleInterface{
+	private int appearanceTime;
+	
+	public Mole(int x, int y){
+		super(x,y,.50,"resources/sampleImages/mole.png");
 	}
 
 	@Override
 	public int getAppearanceTime() {
 		// TODO Auto-generated method stub
-		return 0;
+		return appearanceTime;
 	}
 
 	@Override
-	public void setAppearanceTime(int i) {
+	public void setAppearanceTime(int d) {
 		// TODO Auto-generated method stub
+		this.appearanceTime = d;
 
 	}
 
