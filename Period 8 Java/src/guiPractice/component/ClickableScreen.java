@@ -32,8 +32,8 @@ public abstract class ClickableScreen extends Screen implements MouseListener{
 		return this;
 	}
 
-	
-	
+
+
 
 	public abstract void initAllObjects(List<Visible> list);
 
@@ -56,13 +56,16 @@ public abstract class ClickableScreen extends Screen implements MouseListener{
 
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
+	public void mouseClicked(MouseEvent m) {
 		// TODO Auto-generated method stub
-		for(Clickable select:clickables){
-			if(select.isHovered(e.getX(), e.getY())){
-				select.act();
+		for(int i = 0; i<clickables.size(); i++){
+			Clickable c = clickables.get(i);
+			if(c.isHovered(m.getX(), m.getY())){
+				c.act();
 				break;
 			}
+
+
 		}
 	}
 
