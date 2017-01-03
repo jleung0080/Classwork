@@ -10,6 +10,5 @@ public interface MoleInterface extends Clickable {
 	void setAppearanceTime(int i);
 
 	void setAction(Action action);
-	
 
 }
