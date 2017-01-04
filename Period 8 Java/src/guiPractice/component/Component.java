@@ -69,7 +69,7 @@ public abstract class Component implements Visible {
 	
 	public void update() {
 		update(image.createGraphics());
-
+		
 	}
 
 }

@@ -11,6 +11,7 @@ import guiPractice.component.Action;
 import guiPractice.component.Button;
 import guiPractice.component.ClickableGraphic;
 import guiPractice.component.Graphic;
+import guiPractice.component.MovingComponent;
 import guiPractice.component.TextArea;
 import guiPractice.component.TextLabel;
 import guiPractice.component.Visible;
@@ -40,6 +41,13 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 				MouseFollower.game.setScreen(MouseFollower.moveScreen);
 			}
 		});
+		
+		MovingComponent mc = new MovingComponent(30, 60, 80, 80);
+		mc.setVy(3);
+		mc.play();
+		viewObjects.add(mc);
+		
+		
 		picture = new Graphic(300,300,.5,"resources/sampleImages/images.jpg");
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
