@@ -17,8 +17,8 @@ public class SimonScreenJoey extends ClickableScreen implements Runnable{
 	private boolean playerTurn;
 	private ProgressInterfaceJoey progressInterface;
 	private Button red;
-	
-	
+
+
 	public SimonScreenJoey(int width, int height) {
 		super(width, height);
 		// TODO Auto-generated constructor stub
@@ -30,10 +30,17 @@ public class SimonScreenJoey extends ClickableScreen implements Runnable{
 
 	}
 
+
+	private Button getAButton() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
