@@ -28,13 +28,13 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 	@Override
 	public void initAllObjects(List<Visible> viewObjects) {
 		moles = new ArrayList<MoleInterface>();
-		//		player = getAPlayer();
+		player = getAPlayer();
 		label = new TextLabel(getWidth()/2-60, 
 				getHeight()/2-30, 120, 60, "Ready...");
 		timeLabel = new TextLabel(getWidth()/2-60,
 				50, 120, 60, "");
 		viewObjects.add(label);
-		//		viewObjects.add(player);
+		viewObjects.add(player);
 		viewObjects.add(timeLabel);
 	}
 
@@ -89,7 +89,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 					//remove mole from "database"
 					moles.remove(mole);
 				}
-				
+
 			});
 			//add mole to visible
 			addObject(mole);
@@ -113,7 +113,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 				//remove it from our mole database
 				moles.remove(i);
 				i--;//compensate for i++
-				
+
 			}
 		}
 	}
@@ -128,7 +128,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 	 * @return
 	 */
 	private PlayerInterface getAPlayer() {
-		return new Player(50,50);
+		return new Player(20,20);
 	}
 
 	/**
