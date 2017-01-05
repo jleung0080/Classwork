@@ -1,9 +1,9 @@
 package Simon;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-import guiPractice.component.Button;
 import guiPractice.component.ClickableScreen;
 import guiPractice.component.TextLabel;
 import guiPractice.component.Visible;
@@ -16,8 +16,8 @@ public class SimonScreenJoey extends ClickableScreen implements Runnable{
 	private int sequenceLength;
 	private boolean playerTurn;
 	private ProgressInterfaceJoey progressInterface;
-	private Button red;
-
+	private int numberOfButtons;
+	private ArrayList<Color> colors;
 
 	public SimonScreenJoey(int width, int height) {
 		super(width, height);
@@ -25,11 +25,18 @@ public class SimonScreenJoey extends ClickableScreen implements Runnable{
 	}
 
 	@Override
-	public void initAllObjects(List<Visible> list) {
+	public void initAllObjects(List<Visible> v) {
 		// TODO Auto-generated method stub
-
+		buttons = new ArrayList<ButtonInterfaceJoey>();
+		colors.add(Color.BLUE);
+		colors.add(Color.GREEN);
+		colors.add(Color.RED);
+		colors.add(Color.magenta);
 	}
 
+	private void addButtons(int x, int y){
+		
+	}
 
 	private Button getAButton() {
 		// TODO Auto-generated method stub
@@ -37,10 +44,13 @@ public class SimonScreenJoey extends ClickableScreen implements Runnable{
 	}
 
 
+
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-
+		roundNumber = 1;
+		sequenceLength = 3;
+		
 	}
 
 }
