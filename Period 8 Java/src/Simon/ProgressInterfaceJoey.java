@@ -4,10 +4,8 @@ import guiPractice.component.Visible;
 
 public interface ProgressInterfaceJoey extends Visible {
 	
-	int getRound();
-	void setRound(int i);
-	
-	int getSequence();
-	void setSequence(int i);
+	void gameOver();
+	void setRound(int x);
+	void setSequenceSize(int x);
 	
 }
