@@ -20,6 +20,7 @@ public class SimonScreenJoey extends ClickableScreen implements Runnable{
 	private boolean acceptingInput;
 	private int sequenceIndex;
 	private int lastSelectedButton;
+	private Visible viewObjects;
 
 
 	public SimonScreenJoey(int width, int height) {
