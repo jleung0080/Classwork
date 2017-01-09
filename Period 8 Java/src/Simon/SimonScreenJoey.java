@@ -4,8 +4,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.Action;
-
+import guiPractice.component.Action;
 import guiPractice.component.ClickableScreen;
 import guiPractice.component.TextLabel;
 import guiPractice.component.Visible;
@@ -20,7 +19,6 @@ public class SimonScreenJoey extends ClickableScreen implements Runnable{
 	private boolean acceptingInput;
 	private int sequenceIndex;
 	private int lastSelectedButton;
-	private Visible viewObjects;
 
 
 	public SimonScreenJoey(int width, int height) {
