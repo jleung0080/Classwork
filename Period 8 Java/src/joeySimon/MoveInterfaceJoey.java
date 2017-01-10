@@ -1,4 +1,4 @@
-package Simon;
+package joeySimon;
 
 public class MoveInterfaceJoey {
 

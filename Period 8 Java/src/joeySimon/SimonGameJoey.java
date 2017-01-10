@@ -1,4 +1,4 @@
-package Simon;
+package joeySimon;
 
 import guiPractice.GUIApplication;
 import whackAMole.WhackAMoleGame;
