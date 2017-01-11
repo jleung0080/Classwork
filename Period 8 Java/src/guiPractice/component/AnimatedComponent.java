@@ -25,7 +25,7 @@ public class AnimatedComponent extends MovingComponent{
 	public void setRepeat(boolean b){
 		repeat = b;
 	}
-	
+
 	public boolean isRepeat(){
 		return repeat;
 	}
@@ -33,17 +33,17 @@ public class AnimatedComponent extends MovingComponent{
 	public boolean isAnimated(){
 		return true;
 	}
-	
+
 
 
 	public void addFrame(BufferedImage image, Integer time){
 		frame.add(image);
 		this.times.add(time);
 	}
-	
+
 	@Override
 	public void checkBehaviors(){
-		
+		//restriction to location
 	}
 
 	@Override
@@ -51,9 +51,11 @@ public class AnimatedComponent extends MovingComponent{
 		long currentTime = System.currentTimeMillis();//gets time now
 		//check if it's time to change the frame
 		//and make sure that there are images in the frame list
-		if(frame != null && frame.size() > 0 && frame.size() == times.size() && currentTime - displayTime > times.get(currentFrame)){
+		if(frame != null &&
+				frame.size() > 0 &&
+				frame.size() == times.size() &&
+				currentTime - displayTime > times.get(currentFrame)){
 			displayTime = currentTime;
-
 			//increase the currentFrameIndex but don't exceed size()
 			currentFrame = (currentFrame+1)%frame.size();
 			//end animation if not on repeat

@@ -6,8 +6,11 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+
 import guiPractice.Screen;
 import guiPractice.component.Action;
+import guiPractice.component.AnimatedComponent;
 import guiPractice.component.Button;
 import guiPractice.component.ClickableGraphic;
 import guiPractice.component.Graphic;
@@ -42,17 +45,31 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 			}
 		});
 		
-		MovingComponent mc = new MovingComponent(30, 60, 80, 80);
-		mc.setVy(3);
-		mc.play();
-		viewObjects.add(mc);
-		
-		
 		picture = new Graphic(300,300,.5,"resources/sampleImages/images.jpg");
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		viewObjects.add(button);
 		viewObjects.add(picture);
+		
+		
+//		MovingComponent mc = new MovingComponent(30, 60, 80, 80);
+//		mc.setVy(3);
+//		mc.play();
+//		viewObjects.add(mc);
+		
+		addAnimation(viewObjects);
+		
+	}
+
+	private void addAnimation(ArrayList<Visible> viewObjects) {
+		// TODO Auto-generated method stub
+		AnimatedComponent a = new AnimatedComponent(40,50,150,150);
+		try{
+			ImageIcon icon = new ImageIcon("resources/sampleImages/megaman.png");
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	public void mouseDragged(MouseEvent e) {
