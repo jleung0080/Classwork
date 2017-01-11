@@ -66,12 +66,12 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 
 	private void addAnimation(ArrayList<Visible> viewObjects) {
 		// TODO Auto-generated method stub
-		AnimatedComponent a = new AnimatedComponent(0,0,150,150);
+		AnimatedComponent a = new AnimatedComponent(60,60,150,150);
 		try{
 			int numberInRow = 6;
 			int rows = 1;
-			int w = 60;
-			int h = 100;
+			int w = 80;
+			int h = 110;
 			
 			
 			ImageIcon icon = new ImageIcon("resources/sampleImages/sanic.jpg");
@@ -90,6 +90,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 			e.printStackTrace();
 		}
 		viewObjects.add(a);
+		a.setVx(2);
 		a.play();
 	}
 
