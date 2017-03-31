@@ -21,7 +21,6 @@ public class ListRunner {
 			if(shoppingList.get(i).isPurchased()){
 				System.out.print(shoppingList.remove(i).getDescription());
 				i--;
-				
 			}
 		}
 	}
