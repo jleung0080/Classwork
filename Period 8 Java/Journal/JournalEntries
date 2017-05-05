@@ -7,4 +7,10 @@ Joey
 
 5/5
 - Testing objects and classes being placed into 2d arrays;
+Creating Obstruction interface later to be used to identify objects that are obstructions that
+cannot be moved through. Found image files for walls, ground, and began to layout the wall class. 
+Considering making a class for each wall image, and each floor image like wall1, wall2, wall3... etc. 
+Getting ready to attempt display of wall/placing in 2d array and displaying.
+
+* Goal for monday: Complete testing of displaying single wall.
 
