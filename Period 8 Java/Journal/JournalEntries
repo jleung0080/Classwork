@@ -12,5 +12,5 @@ cannot be moved through. Found image files for walls, ground, and began to layou
 Considering making a class for each wall image, and each floor image like wall1, wall2, wall3... etc. 
 Getting ready to attempt display of wall/placing in 2d array and displaying.
 
-* Goal for monday: Complete testing of displaying single wall.
+* Goal for Monday: Complete testing of displaying single wall.
 
