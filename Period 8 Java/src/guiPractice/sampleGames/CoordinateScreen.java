@@ -47,7 +47,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 			}
 		});
 		
-		picture = new Graphic(300,300,.5,"resources/sampleImages/images.jpg");
+		picture = new Graphic(300,300,10,"resources/sampleImages/images.jpg");
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		viewObjects.add(button);

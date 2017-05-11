@@ -19,3 +19,10 @@ Getting ready to attempt display of wall/placing in 2d array and displaying.
 the wall or attempt that yet, as the screen isn't popping up.
 
 *Goal for Tuesday: Finish wall test display
+
+5/11
+- Finished displaying wall, grass, and scaling. Completed the sizing of screen so that a 9x9 display of
+"blocks" can be shown at any given time. Worked with ViewObjects to add and display a field. Discussed 
+work with Viewables so that I can change the grid of tiles being displayed.
+
+*Goal for Friday: Begin laying out the first "floor" of the game by the end of the period.
