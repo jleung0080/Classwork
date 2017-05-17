@@ -45,3 +45,10 @@ section displayed
 doesn't interfere with the launching, but will look further into the new error. 
 
 *Goal for Wednesday: Fix the error, and begin to make a non-hard coded version of the viewing 7x7
+
+5/17
+- Error fixed; Begun work with KeyListeners. Encountered problems with code;(KeyListeners need to reference
+a player index/the map layout, but as superclass it can't access the information of the subclass? Theory
+issues going to look deeper into it next class)
+
+*Goal for Monday: Get Keylisteners to change character coordinates
