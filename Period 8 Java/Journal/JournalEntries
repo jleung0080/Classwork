@@ -56,7 +56,7 @@ issues going to look deeper into it next class)
 5/22
 - Got display of multiple character locations working (Changing location) however ran into an error:
 	Exception in thread "Thread-2" java.util.ConcurrentModificationException
-looking to fix this next class
+looking to fix this next class. Mr. Nockles suggested I just move everything to the left. 
 
 *Goal for Tuesday: Fix Error:
 	Exception in thread "Thread-2" java.util.ConcurrentModificationException
