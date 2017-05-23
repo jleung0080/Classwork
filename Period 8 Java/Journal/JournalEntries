@@ -60,3 +60,10 @@ looking to fix this next class. Mr. Nockles suggested I just move everything to 
 
 *Goal for Tuesday: Fix Error:
 	Exception in thread "Thread-2" java.util.ConcurrentModificationException
+	
+5/23
+- FIXED THE ERROR, GOT MULTIPLE FLOORS WORKING, PREPARING FOR MERGE OF CODE / WORKING ON STAIRS TO DISPLAY
+NEXT SCREEN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MOVEMENT ALL WORKS OUT GREAT
+NO BUGS
+
+*Goal for Wednesday: Jump screens upon stepping on stairs
