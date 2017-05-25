@@ -71,3 +71,7 @@ NO BUGS
 5/24
 - Inter-floor movement is currently working
 *Goal for Thursday: Finish all inter-floor movement... Maybe include character into screen?
+
+5/25
+-Most inter-floor movement complete. Pulled new gui and broke code
+*Goal for Friday: fix errors
