@@ -73,5 +73,9 @@ NO BUGS
 *Goal for Thursday: Finish all inter-floor movement... Maybe include character into screen?
 
 5/25
--Most inter-floor movement complete. Pulled new gui and broke code
+- Most inter-floor movement complete. Pulled new gui and broke code
 *Goal for Friday: fix errors
+
+5/30
+- Fixed errors, created random spawn placement for monsters
+*Goal for Wednesday: Do monster movement
